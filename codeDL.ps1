@@ -7,6 +7,6 @@ $wc.DownloadFile("https://github.com/Kiliken/unity-portable-androidSDK/archive/r
 
 [System.IO.Compression.ZipFile]::ExtractToDirectory("$($PSScriptRoot)\main.zip", $PSScriptRoot)
 
-Move-Item "$($PSScriptRoot)\unity-portable-androidSDK\*" $PSScriptRoot -Force
-Remove-Item "$($PSScriptRoot)\unity-portable-androidSDK" -Recurse -Force
+Move-Item "$($PSScriptRoot)\unity-portable-androidSDK-main\*" $PSScriptRoot -Force
+Remove-Item "$($PSScriptRoot)\unity-portable-androidSDK-main" -Recurse -Force
 Remove-Item "$($PSScriptRoot)\main.zip" -Force
