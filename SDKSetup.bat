@@ -11,9 +11,8 @@ set SKIP_JDK_VERSION_CHECK=true
 
 call sdkmanager --install "cmdline-tools;6.0"
 call sdkmanager --install "build-tools;34.0.0"
+call sdkmanager --install "platform-tools"
 call sdkmanager --install "platforms;android-33"
 call sdkmanager --install "platforms;android-34"
 call sdkmanager --install "platforms;android-35"
 call sdkmanager --install "ndk;23.1.7779620"
-
-pause
