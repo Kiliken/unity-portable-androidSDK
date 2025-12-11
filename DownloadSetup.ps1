@@ -13,6 +13,7 @@ New-Item -Path "$($PSScriptRoot)\SDK\cmdline-tools" -ItemType Directory
 $jdk25DlUrl = "https://download.java.net/java/GA/jdk25/bd75d5f9689641da8e1daabeccb5528b/36/GPL/openjdk-25_windows-x64_bin.zip"
 $jdk11DlUrl = "https://download.java.net/java/GA/jdk11/13/GPL/openjdk-11.0.1_windows-x64_bin.zip"
 $sdkCmdtDlUrl = "https://dl.google.com/android/repository/commandlinetools-win-13114758_latest.zip"
+$gradleDlUrl = "https://services.gradle.org/distributions/gradle-7.5.1-bin.zip"
 
 $wc = New-Object Net.WebClient
 Add-Type -AssemblyName System.IO.Compression.FileSystem
@@ -24,6 +25,8 @@ Write-Output "[unity-portable-androidSDK] Downloading OpenJDK_11.0.1..."
 $wc.DownloadFile($jdk11DlUrl, "$($PSScriptRoot)\jdk11.zip")
 Write-Output "[unity-portable-androidSDK] Downloading Android_SDKCmdline-tools..."
 $wc.DownloadFile($sdkCmdtDlUrl, "$($PSScriptRoot)\sdkCmdlt.zip")
+Write-Output "[unity-portable-androidSDK] Downloading gradle-7.5.1..."
+$wc.DownloadFile($gradleDlUrl, "$($PSScriptRoot)\gradle.zip")
 
 # Extract
 Write-Output "[unity-portable-androidSDK] Extracting OpenJDK_25..."
@@ -32,8 +35,8 @@ Write-Output "[unity-portable-androidSDK] Extracting OpenJDK_11.0.1..."
 [System.IO.Compression.ZipFile]::ExtractToDirectory("$($PSScriptRoot)\jdk11.zip", "$($PSScriptRoot)\")
 Write-Output "[unity-portable-androidSDK] Extracting Android_SDKCmdline-tools..."
 [System.IO.Compression.ZipFile]::ExtractToDirectory("$($PSScriptRoot)\sdkCmdlt.zip", "$($PSScriptRoot)\SDK\cmdline-tools")
-
-
+Write-Output "[unity-portable-androidSDK] Extracting gradle-7.5.1..."
+[System.IO.Compression.ZipFile]::ExtractToDirectory("$($PSScriptRoot)\gradle.zip", "$($PSScriptRoot)\")
 
 # Dependencies Setup
 Rename-Item -Path "$($PSScriptRoot)\SDK\cmdline-tools\cmdline-tools" -NewName "latest"

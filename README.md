@@ -33,6 +33,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "$(Get-Location)\Downloa
 - **Android platforms** (API levels 33–35)  
 - **NDK** (Unity‑compatible version)  
 - **JDK** (OpenJDK 11, recommended for Unity)
+- **Gradle** (Unity‑compatible version)
 
 ---
 
@@ -45,6 +46,7 @@ After running the scripts:
    - **JDK** → `<Local>\PortableAndroidSDK\OpenJDK`
    - **SDK** → `<Local>\PortableAndroidSDK\SDK`
    - **NDK** → `<Local>\PortableAndroidSDK\NDK`
+   - **Gradle** → `<Local>\PortableAndroidSDK\Gradle`
 
 Unity should now recognize Android as a build target.
 
